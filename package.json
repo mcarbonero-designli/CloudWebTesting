@@ -1,0 +1,24 @@
+{
+  "name": "cloudwebtesting",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "report": "playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcarbonero-designli/CloudWebTesting.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mcarbonero-designli/CloudWebTesting/issues"
+  },
+  "homepage": "https://github.com/mcarbonero-designli/CloudWebTesting#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1"
+  }
+}
