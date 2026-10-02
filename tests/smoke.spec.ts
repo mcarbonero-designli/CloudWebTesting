@@ -32,15 +32,12 @@ test.describe('@smoke Automation Exercise', () => {
     await expect(page.getByRole('heading', { name: 'All Products' })).toBeVisible();
     await expect(page.locator('.features_items .product-image-wrapper').first()).toBeVisible();
 
-    await page.locator('#search_product').fill('Top');
+    await page.locator('#search_product').fill('Blue Top');
     await page.locator('#submit_search').click();
 
     await expect(page.getByRole('heading', { name: 'Searched Products' })).toBeVisible();
-    const names = page.locator('.features_items .productinfo p');
-    await expect(names.first()).toBeVisible();
-    for (const name of await names.allTextContents()) {
-      expect(name.toLowerCase()).toContain('top');
-    }
+    // Search also matches by category, so assert the known product is in the results.
+    await expect(page.locator('.features_items .productinfo p', { hasText: 'Blue Top' })).toBeVisible();
   });
 
   test('product detail page shows product information', async ({ page }) => {
